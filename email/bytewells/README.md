@@ -37,6 +37,6 @@ Mustache-style, filled by the sender:
 - Footer is required: ThoughtPivot, Inc., 2937 East Grand Boulevard, Detroit, MI 48202, plus the unsubscribe link.
 - EU recipients get the GDPR legitimate-interest line (already in the outreach footer).
 - Write "Bytewells by ThoughtPivot". English only, factual, not pitchy. No AEC words.
-- Don't claim Bytewells runs on Flight, Scribe or Silc. Don't state anything about source encryption.
+- Don't claim Bytewells runs on Flight, Scribe or Silc. Don't make unverified claims about how source code is stored or protected.
 - Anyone who asks to be removed is removed from every list and is never replied to.
 - Nothing goes out until Dan has reviewed it.
