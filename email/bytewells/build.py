@@ -1,7 +1,7 @@
 import asyncio,re,html
 from playwright.async_api import async_playwright
-BW_LOGO="https://raw.githubusercontent.com/thoughtpivot/assets/main/email/bytewells-logo.png"
-TP_LOGO="https://raw.githubusercontent.com/thoughtpivot/assets/main/email/tp-logo.png"
+BW_LOGO="https://thoughtpivot.github.io/assets/email/bytewells-logo.png"
+TP_LOGO="https://thoughtpivot.github.io/assets/email/tp-logo.png"
 WL="https://bytewells.com/developer-waitlist"
 ADDR="ThoughtPivot, Inc., 2937 East Grand Boulevard, Detroit, MI 48202"
 GDPR="We're contacting you under legitimate interest because your email is public on your Apify developer profile. Unsubscribe anytime and we'll delete your data. Questions: bytewells@thoughtpivot.com."
