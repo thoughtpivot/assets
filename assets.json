@@ -1,11 +1,11 @@
 {
   "baseUrl": "https://thoughtpivot.github.io/assets/",
-  "count": 17,
+  "count": 19,
   "groups": [
     {
       "dir": "email",
       "title": "Email brand logos",
-      "count": 4
+      "count": 5
     },
     {
       "dir": "email/bytewells",
@@ -15,7 +15,7 @@
     {
       "dir": "email/bytewells/assets",
       "title": "Bytewells email source logos",
-      "count": 2
+      "count": 3
     },
     {
       "dir": "vran",
@@ -64,6 +64,19 @@
       "url": "https://thoughtpivot.github.io/assets/email/bytewells/assets/bytewells-logo.svg"
     },
     {
+      "path": "email/bytewells/assets/discord-logo.svg",
+      "name": "discord-logo.svg",
+      "dir": "email/bytewells/assets",
+      "ext": "svg",
+      "type": "SVG",
+      "category": "image",
+      "bytes": 1413,
+      "width": 48,
+      "height": 48,
+      "brand": "Bytewells",
+      "url": "https://thoughtpivot.github.io/assets/email/bytewells/assets/discord-logo.svg"
+    },
+    {
       "path": "email/bytewells/assets/tp-logo.svg",
       "name": "tp-logo.svg",
       "dir": "email/bytewells/assets",
@@ -83,7 +96,7 @@
       "ext": "html",
       "type": "HTML",
       "category": "document",
-      "bytes": 5021,
+      "bytes": 4739,
       "brand": "Bytewells",
       "url": "https://thoughtpivot.github.io/assets/email/bytewells/email1.html"
     },
@@ -105,7 +118,7 @@
       "ext": "html",
       "type": "HTML",
       "category": "document",
-      "bytes": 4228,
+      "bytes": 3946,
       "brand": "Bytewells",
       "url": "https://thoughtpivot.github.io/assets/email/bytewells/email2.html"
     },
@@ -127,7 +140,7 @@
       "ext": "html",
       "type": "HTML",
       "category": "document",
-      "bytes": 4298,
+      "bytes": 4016,
       "brand": "Bytewells",
       "url": "https://thoughtpivot.github.io/assets/email/bytewells/email3.html"
     },
@@ -149,7 +162,7 @@
       "ext": "md",
       "type": "Markdown",
       "category": "document",
-      "bytes": 2586,
+      "bytes": 3184,
       "brand": "Bytewells",
       "url": "https://thoughtpivot.github.io/assets/email/bytewells/README.md"
     },
@@ -160,7 +173,7 @@
       "ext": "html",
       "type": "HTML",
       "category": "document",
-      "bytes": 3940,
+      "bytes": 4194,
       "brand": "Bytewells",
       "url": "https://thoughtpivot.github.io/assets/email/bytewells/reply_waitlist.html"
     },
@@ -171,9 +184,21 @@
       "ext": "txt",
       "type": "Text",
       "category": "document",
-      "bytes": 584,
+      "bytes": 757,
       "brand": "Bytewells",
       "url": "https://thoughtpivot.github.io/assets/email/bytewells/reply_waitlist.txt"
+    },
+    {
+      "path": "email/discord-logo.png",
+      "name": "discord-logo.png",
+      "dir": "email",
+      "ext": "png",
+      "type": "PNG",
+      "category": "image",
+      "bytes": 1046,
+      "width": 48,
+      "height": 48,
+      "url": "https://thoughtpivot.github.io/assets/email/discord-logo.png"
     },
     {
       "path": "email/tp-logo.png",
