@@ -9,7 +9,7 @@ Branded HTML + plain-text emails for Bytewells by ThoughtPivot outreach and repl
 | `email1.html` / `email1.txt` | Outreach email 1 (rental pricing, Nov 2 launch) |
 | `email2.html` / `email2.txt` | Follow-up |
 | `email3.html` / `email3.txt` | Last note |
-| `reply_waitlist.html` / `.txt` | Reply to a developer waitlist signup. Greeting is always "Hi there,". Primary button is "Join us on Discord" (24px Discord logo, link from the `DISCORD` constant in `build.py`); the waitlist link sits in the body sentence |
+| `reply_waitlist.html` / `.txt` | Reply to a developer waitlist signup. Greeting is always "Hi there,", and there is no sign-off. Primary button is "Join us on Discord" (24px Discord logo, link from the `DISCORD` constant in `build.py`); the waitlist link sits in the body sentence |
 | `build.py` | Source of truth for email1-3 and the waitlist reply (`R`); regenerates all `.html` and `.txt` files |
 | `assets/*.svg` | Source logos (Bytewells, ThoughtPivot, Discord). The PNGs used in emails are rendered from these and hosted at `email/bytewells-logo.png`, `email/tp-logo.png` and `email/discord-logo.png` in the repo root (48px, transparent, white Discord glyph for the blurple button) |
 
