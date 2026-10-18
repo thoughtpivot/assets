@@ -14,7 +14,7 @@ Branded HTML + plain-text emails for Bytewells by ThoughtPivot outreach and repl
 | `assets/*.svg` | Source logos. The PNGs used in emails are rendered from these and hosted at `email/bytewells-logo.png` and `email/tp-logo.png` in the repo root |
 
 Do not move or rename `email/bytewells-logo.png` or `email/tp-logo.png`; the templates load them from
-`https://raw.githubusercontent.com/thoughtpivot/assets/main/email/`.
+`https://thoughtpivot.github.io/assets/email/` (GitHub Pages).
 
 ## Rendering
 
