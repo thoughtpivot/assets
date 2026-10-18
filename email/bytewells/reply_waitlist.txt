@@ -1,10 +1,10 @@
-Hi,
+Hi there,
 
-Thanks for joining the Bytewells by ThoughtPivot developer waitlist with lexis-solutions. We're onboarding developers in small batches during the private beta and will reach out when your spot opens.
+Thanks for joining the Bytewells by ThoughtPivot developer waitlist with {{apify_username}}. You're on the waitlist (https://bytewells.com/developer-waitlist). We're onboarding developers in small batches during the private beta and will reach out when your spot opens.
 
-If you'd like to share which Actors you'd list first, just reply here.
+If you'd like to share which Actors you'd list first, just reply here. You're also welcome to join us on Discord, where we share updates and you can talk with the team directly.
 
-Waitlist details: https://bytewells.com/developer-waitlist
+Join us on Discord: https://discord.gg/N7xyfmMRj
 
 _dan
 
