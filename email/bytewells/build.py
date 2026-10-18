@@ -1,5 +1,4 @@
 import asyncio,re,html,os,sys,tempfile
-from playwright.async_api import async_playwright
 HERE=os.path.dirname(os.path.abspath(__file__))
 BW_LOGO="https://thoughtpivot.github.io/assets/email/bytewells-logo.png"
 TP_LOGO="https://thoughtpivot.github.io/assets/email/tp-logo.png"
@@ -42,16 +41,17 @@ def tpl(e):
     bg,pad="#5865F2","12px 26px 12px 22px"
   else:
     label=e["cta"]; bg,pad="#0284c7","13px 26px"
-  hdr="" if rply else f'<!-- Subject: {e["subject"]} | From: Dan at Bytewells <bytewells@thoughtpivot.com> | Reply-To: bytewells@thoughtpivot.com | List-Unsubscribe: <{{{{unsubscribe_url}}}}> -->\n'
   if rply:
     foot=f'<strong style="color:#0c0d0f;">Bytewells by ThoughtPivot</strong><br>{ADDR}<br>{e["why"]}<br><span style="font-size:11px;line-height:16px;color:#8a8f98;">{e["note"].replace("bytewells@thoughtpivot.com","<a href=\"mailto:bytewells@thoughtpivot.com\" style=\"color:#8a8f98;\">bytewells@thoughtpivot.com</a>")}</span>'
   else:
     foot=f'''<strong style="color:#0c0d0f;">Bytewells by ThoughtPivot</strong><br>{ADDR}<br>{WHY}<br><span style="font-size:11px;line-height:16px;color:#8a8f98;">{GDPR.replace("bytewells@thoughtpivot.com","<a href=\"mailto:bytewells@thoughtpivot.com\" style=\"color:#8a8f98;\">bytewells@thoughtpivot.com</a>")}</span><br><a href="{{{{unsubscribe_url}}}}" style="color:#646973;text-decoration:underline;">Unsubscribe</a>'''
-  signoff="" if rply else f'<p style="{P}">_dan</p>\n'  # waitlist reply has no sign-off
-  ps="\n".join(f'<p style="{P}">{p.replace("{{sample_actor_url}}",chr(60)+"a href=\"{{sample_actor_url}}\" style=\"color:#0284c7;\""+chr(62)+"{{sample_actor_url}}</a>")}</p>' for p in e["paras"])
+  def para(p):
+    m=re.fullmatch(r"\{\{#had_rentals\}\}(.*)\{\{/had_rentals\}\}",p)
+    return f'{{{{#had_rentals}}}}<p style="{P}">{m.group(1)}</p>{{{{/had_rentals}}}}' if m else f'<p style="{P}">{p}</p>'
+  ps="\n".join(para(p.replace("{{sample_actor_url}}",chr(60)+"a href=\"{{sample_actor_url}}\" style=\"color:#0284c7;\""+chr(62)+"{{sample_actor_url}}</a>")) for p in e["paras"])
   return f'''<!DOCTYPE html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="x-apple-disable-message-reformatting">
-{hdr}<title>{e["subject"]}</title>
+<title>{e["subject"]}</title>
 <style>@media only screen and (max-width:620px){{.c{{width:100%!important}}.p{{padding-left:20px!important;padding-right:20px!important}}.btn a{{display:block!important}}}}</style></head>
 <body style="margin:0;padding:0;background:#f5f6f7;">
 <div style="display:none;max-height:0;overflow:hidden;opacity:0;">{e["pre"]}</div>
@@ -67,14 +67,18 @@ def tpl(e):
 {ps}
 <table role="presentation" class="btn" cellpadding="0" cellspacing="0" border="0" style="margin:8px 0 24px 0;"><tr><td align="center" bgcolor="{bg}" style="border-radius:6px;">
 <a href="{url}" style="display:inline-block;padding:{pad};font-family:Helvetica,Arial,sans-serif;font-size:16px;font-weight:bold;line-height:24px;color:#ffffff;text-decoration:none;border-radius:6px;">{label}</a></td></tr></table>
-{signoff}</td></tr>
+</td></tr>
 <tr><td class="p" style="padding:20px 40px 28px 40px;background:#f5f6f7;border-top:1px solid #ebedf1;border-radius:0 0 8px 8px;font-family:Helvetica,Arial,sans-serif;font-size:12px;line-height:18px;color:#646973;">
 {foot}
 </td></tr></table></td></tr></table></body></html>'''
 def txt(e):
   if "why" in e:
     return "\n\n".join(e["txt_paras"])+f"\n\n{e['cta']}: {e['url']}\n\n--\nBytewells by ThoughtPivot\n{ADDR}\n{e['why']} {e['note']}\n"
-  return "\n\n".join(e["paras"])+f"\n\n{e['cta']}: {WL}\n\n_dan\n\n--\nBytewells by ThoughtPivot\n{ADDR}\n{WHY}\n{GDPR}\nUnsubscribe: {{{{unsubscribe_url}}}}\n"
+  body=""
+  for p in e["paras"]:
+    m=re.fullmatch(r"\{\{#had_rentals\}\}(.*)\{\{/had_rentals\}\}",p)
+    body+=("{{#had_rentals}}\n\n"+m.group(1)+"{{/had_rentals}}") if m else (("\n\n" if body else "")+p)
+  return body+f"\n\n{e['cta']}: {WL}\n\n--\nBytewells by ThoughtPivot\n{ADDR}\n{WHY}\n{GDPR}\nUnsubscribe: {{{{unsubscribe_url}}}}\n"
 S={"apify_username":"example-actors","first_name":"Shahid","store_actor_count":"14","sample_actor_url":"https://apify.com/example/google-maps-scraper","unsubscribe_url":"https://bytewells.com/unsubscribe?t=sample"}
 def fill(h):
   for k,v in S.items(): h=h.replace("{{"+k+"}}",v)
@@ -85,9 +89,10 @@ async def main():
   # default: regenerate the .html/.txt files only. --logos re-renders the PNG logos into ../ (repo email/);
   # --previews writes preview screenshots to a temp dir (not committed).
   for n,e,f in [("email1",E1,"email1"),("email2",E2,"email2"),("email3",E3,"email3")]:
-    h=tpl(e); open(os.path.join(HERE,f+".html"),"w").write(h); open(os.path.join(HERE,f+".txt"),"w").write(f"Subject: {e['subject']}\n\n"+txt(e))
+    h=tpl(e); open(os.path.join(HERE,f+".html"),"w").write(h); open(os.path.join(HERE,f+".txt"),"w").write(txt(e))
   open(os.path.join(HERE,"reply_waitlist.html"),"w").write(tpl(R)); open(os.path.join(HERE,"reply_waitlist.txt"),"w").write(txt(R))
   if not ("--logos" in sys.argv or "--previews" in sys.argv): return
+  from playwright.async_api import async_playwright  # only needed for --logos / --previews
   out=tempfile.mkdtemp(prefix="bw-email-")
   async with async_playwright() as p:
     b=await p.chromium.launch(); pg=await b.new_page(device_scale_factor=2)

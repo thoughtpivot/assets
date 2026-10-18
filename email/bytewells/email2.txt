@@ -1,12 +1,8 @@
-Subject: Re: Monthly rentals for your Apify Actors
-
 Hi {{first_name}},
 
 Quick follow-up. Bytewells launches Nov 2. Your Apify listing stays live; you add monthly rentals and 1-hour, 24-hour or 7-day passes on top. 10% commission, 0% on renters you bring.
 
 Join the developer waitlist: https://bytewells.com/developer-waitlist
-
-_dan
 
 --
 Bytewells by ThoughtPivot
