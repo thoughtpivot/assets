@@ -47,6 +47,7 @@ def tpl(e):
     foot=f'<strong style="color:#0c0d0f;">Bytewells by ThoughtPivot</strong><br>{ADDR}<br>{e["why"]}<br><span style="font-size:11px;line-height:16px;color:#8a8f98;">{e["note"].replace("bytewells@thoughtpivot.com","<a href=\"mailto:bytewells@thoughtpivot.com\" style=\"color:#8a8f98;\">bytewells@thoughtpivot.com</a>")}</span>'
   else:
     foot=f'''<strong style="color:#0c0d0f;">Bytewells by ThoughtPivot</strong><br>{ADDR}<br>{WHY}<br><span style="font-size:11px;line-height:16px;color:#8a8f98;">{GDPR.replace("bytewells@thoughtpivot.com","<a href=\"mailto:bytewells@thoughtpivot.com\" style=\"color:#8a8f98;\">bytewells@thoughtpivot.com</a>")}</span><br><a href="{{{{unsubscribe_url}}}}" style="color:#646973;text-decoration:underline;">Unsubscribe</a>'''
+  signoff="" if rply else f'<p style="{P}">_dan</p>\n'  # waitlist reply has no sign-off
   ps="\n".join(f'<p style="{P}">{p.replace("{{sample_actor_url}}",chr(60)+"a href=\"{{sample_actor_url}}\" style=\"color:#0284c7;\""+chr(62)+"{{sample_actor_url}}</a>")}</p>' for p in e["paras"])
   return f'''<!DOCTYPE html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="x-apple-disable-message-reformatting">
@@ -66,14 +67,13 @@ def tpl(e):
 {ps}
 <table role="presentation" class="btn" cellpadding="0" cellspacing="0" border="0" style="margin:8px 0 24px 0;"><tr><td align="center" bgcolor="{bg}" style="border-radius:6px;">
 <a href="{url}" style="display:inline-block;padding:{pad};font-family:Helvetica,Arial,sans-serif;font-size:16px;font-weight:bold;line-height:24px;color:#ffffff;text-decoration:none;border-radius:6px;">{label}</a></td></tr></table>
-<p style="{P}">_dan</p>
-</td></tr>
+{signoff}</td></tr>
 <tr><td class="p" style="padding:20px 40px 28px 40px;background:#f5f6f7;border-top:1px solid #ebedf1;border-radius:0 0 8px 8px;font-family:Helvetica,Arial,sans-serif;font-size:12px;line-height:18px;color:#646973;">
 {foot}
 </td></tr></table></td></tr></table></body></html>'''
 def txt(e):
   if "why" in e:
-    return "\n\n".join(e["txt_paras"])+f"\n\n{e['cta']}: {e['url']}\n\n_dan\n\n--\nBytewells by ThoughtPivot\n{ADDR}\n{e['why']} {e['note']}\n"
+    return "\n\n".join(e["txt_paras"])+f"\n\n{e['cta']}: {e['url']}\n\n--\nBytewells by ThoughtPivot\n{ADDR}\n{e['why']} {e['note']}\n"
   return "\n\n".join(e["paras"])+f"\n\n{e['cta']}: {WL}\n\n_dan\n\n--\nBytewells by ThoughtPivot\n{ADDR}\n{WHY}\n{GDPR}\nUnsubscribe: {{{{unsubscribe_url}}}}\n"
 S={"apify_username":"example-actors","first_name":"Shahid","store_actor_count":"14","sample_actor_url":"https://apify.com/example/google-maps-scraper","unsubscribe_url":"https://bytewells.com/unsubscribe?t=sample"}
 def fill(h):
