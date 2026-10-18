@@ -1,0 +1,18 @@
+Subject: Bytewells launches Nov 2
+
+Hi {{first_name}},
+
+Last note from me. Bytewells by ThoughtPivot opens Nov 2. Waitlist developers get in first.
+
+If it's not for you, no reply needed and I won't email again.
+
+Get early access: https://bytewells.com/developer-waitlist
+
+_dan
+
+--
+Bytewells by ThoughtPivot
+ThoughtPivot, Inc., 2937 East Grand Boulevard, Detroit, MI 48202
+You're receiving this because your email is listed on your public Apify profile.
+We're contacting you under legitimate interest because your email is public on your Apify developer profile. Unsubscribe anytime and we'll delete your data. Questions: bytewells@thoughtpivot.com.
+Unsubscribe: {{unsubscribe_url}}
