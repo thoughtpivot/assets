@@ -1,0 +1,450 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ThoughtPivot Assets</title>
+<meta name="description" content="Official brand assets for ThoughtPivot, Bytewells and Vran: logos, icons and email templates with direct download and copyable URLs.">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#0b0b0c">
+<link rel="icon" href="vran/vran-icon.svg" type="image/svg+xml">
+<script>
+  // Dark (brand) theme by default; apply a saved choice before paint to avoid a flash.
+  (function () {
+    try { var t = localStorage.getItem("tp-theme"); if (t === "light" || t === "dark") document.documentElement.dataset.theme = t; } catch (e) {}
+  })();
+</script>
+<style>
+  :root {
+    --accent: #0284c7;
+    --accent-strong: #38bdf8;   /* accent for text on dark backgrounds (AA contrast) */
+    --bg: #0b0b0c;
+    --bg-elev: #141416;
+    --bg-elev-2: #1c1c1f;
+    --border: #2a2a2e;
+    --text: #f4f4f5;
+    --muted: #a1a1aa;
+    --focus: #38bdf8;
+    --shadow: 0 1px 2px rgba(0,0,0,.4), 0 8px 24px rgba(0,0,0,.25);
+    --check-a: #ffffff; --check-b: #e7e7ea;
+    --radius: 14px;
+    color-scheme: dark;
+  }
+  :root[data-theme="light"] {
+    --accent-strong: #0369a1;
+    --bg: #f6f7f9; --bg-elev: #ffffff; --bg-elev-2: #f0f2f5; --border: #dfe2e7;
+    --text: #111113; --muted: #52525b; --focus: #0369a1;
+    --shadow: 0 1px 2px rgba(16,24,40,.06), 0 8px 24px rgba(16,24,40,.06);
+    color-scheme: light;
+  }
+  body[data-preview="dark"] { --check-a: #1f1f23; --check-b: #2a2a2f; }
+
+  *, *::before, *::after { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0; background: var(--bg); color: var(--text);
+    font: 16px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--accent-strong); }
+  code, .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: .85em; }
+  :focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; border-radius: 6px; }
+  .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+  .skip { position: absolute; left: 1rem; top: -3rem; background: var(--accent); color: #fff; padding: .5rem .9rem; border-radius: 8px; z-index: 10; text-decoration: none; }
+  .skip:focus { top: 1rem; }
+  .wrap { max-width: 1200px; margin: 0 auto; padding: 0 1.25rem; }
+
+  /* Header */
+  header.site { border-bottom: 1px solid var(--border); background: var(--bg-elev); }
+  header.site::before { content: ""; display: block; height: 4px; background: linear-gradient(90deg, var(--accent), #38bdf8 60%, transparent); }
+  .bar { display: flex; align-items: center; gap: 1rem; padding: 1rem 0; flex-wrap: wrap; }
+  .plate { display: inline-flex; align-items: center; background: #fff; border-radius: 10px; padding: .55rem .8rem; box-shadow: inset 0 0 0 1px rgba(0,0,0,.06); }
+  .plate img { display: block; height: 28px; width: auto; }
+  .bar h1 { font-size: 1.05rem; margin: 0; font-weight: 600; letter-spacing: .01em; color: var(--muted); }
+  .bar h1 strong { color: var(--text); font-weight: 700; }
+  .bar .spacer { flex: 1; }
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: .4rem;
+    font: inherit; font-size: .875rem; font-weight: 600; line-height: 1;
+    padding: .55rem .8rem; min-height: 38px; border-radius: 9px; cursor: pointer; text-decoration: none;
+    border: 1px solid var(--border); background: var(--bg-elev-2); color: var(--text);
+    transition: background .15s, border-color .15s, color .15s;
+  }
+  .btn:hover { border-color: var(--accent); }
+  .btn.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+  .btn.primary:hover { background: #0369a1; border-color: #0369a1; }
+  .btn.copied { background: #15803d; border-color: #15803d; color: #fff; }
+  .btn svg { width: 16px; height: 16px; flex: none; }
+
+  .hero { padding: 2.25rem 0 1rem; }
+  .hero h2 { font-size: clamp(1.6rem, 3.5vw, 2.3rem); line-height: 1.15; margin: 0 0 .5rem; letter-spacing: -.02em; }
+  .hero h2 span { color: var(--accent-strong); }
+  .hero p { margin: 0; color: var(--muted); max-width: 62ch; }
+
+  /* Brands */
+  .brands { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; margin: 1.5rem 0 .5rem; }
+  .brand { background: var(--bg-elev); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.1rem; box-shadow: var(--shadow); display: flex; flex-direction: column; gap: .85rem; }
+  .brand h3 { margin: 0; font-size: 1rem; }
+  .brand p { margin: 0; color: var(--muted); font-size: .9rem; }
+  .brand .plate { align-self: flex-start; padding: .9rem 1.1rem; }
+  .brand .plate img { height: 34px; }
+  .chips { display: flex; flex-wrap: wrap; gap: .4rem; }
+  .chips .btn { font-size: .8rem; min-height: 32px; padding: .4rem .6rem; }
+
+  /* Toolbar */
+  .toolbar { position: sticky; top: 0; z-index: 5; background: color-mix(in srgb, var(--bg) 88%, transparent); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); border-bottom: 1px solid var(--border); margin-top: 1.5rem; }
+  .toolbar .wrap { display: flex; gap: .75rem; align-items: center; padding-top: .75rem; padding-bottom: .75rem; flex-wrap: wrap; }
+  .search { position: relative; flex: 1 1 280px; }
+  .search svg { position: absolute; left: .75rem; top: 50%; transform: translateY(-50%); width: 18px; height: 18px; color: var(--muted); pointer-events: none; }
+  .search input {
+    width: 100%; font: inherit; color: var(--text); background: var(--bg-elev); border: 1px solid var(--border);
+    border-radius: 10px; padding: .6rem .8rem .6rem 2.3rem; min-height: 42px;
+  }
+  .search input::placeholder { color: var(--muted); }
+  .search input:focus { border-color: var(--accent); }
+  .seg { display: inline-flex; border: 1px solid var(--border); border-radius: 10px; overflow: hidden; background: var(--bg-elev); }
+  .seg button { font: inherit; font-size: .85rem; font-weight: 600; border: 0; background: transparent; color: var(--muted); padding: .55rem .8rem; min-height: 40px; cursor: pointer; }
+  .seg button + button { border-left: 1px solid var(--border); }
+  .seg button[aria-pressed="true"] { background: var(--accent); color: #fff; }
+  .count { color: var(--muted); font-size: .875rem; white-space: nowrap; }
+
+  /* Groups + cards */
+  main { padding-bottom: 3rem; }
+  section.group { margin-top: 2rem; scroll-margin-top: 80px; }
+  .group-head { display: flex; align-items: baseline; gap: .6rem; flex-wrap: wrap; margin-bottom: .9rem; }
+  .group-head h2 { margin: 0; font-size: 1.2rem; }
+  .group-head code { color: var(--muted); background: var(--bg-elev-2); border: 1px solid var(--border); padding: .1rem .45rem; border-radius: 6px; }
+  .group-head .n { color: var(--muted); font-size: .85rem; }
+  .grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1rem; }
+  .card { background: var(--bg-elev); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; display: flex; flex-direction: column; box-shadow: var(--shadow); transition: border-color .15s, transform .15s; }
+  .card:hover { border-color: color-mix(in srgb, var(--accent) 60%, var(--border)); }
+  .preview {
+    aspect-ratio: 16 / 10; display: grid; place-items: center; overflow: hidden; position: relative;
+    background-color: var(--check-a);
+    background-image: linear-gradient(45deg, var(--check-b) 25%, transparent 25%), linear-gradient(-45deg, var(--check-b) 25%, transparent 25%), linear-gradient(45deg, transparent 75%, var(--check-b) 75%), linear-gradient(-45deg, transparent 75%, var(--check-b) 75%);
+    background-size: 16px 16px; background-position: 0 0, 0 8px, 8px -8px, -8px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .preview img { position: absolute; inset: 0; margin: auto; width: auto; height: auto; max-width: 82%; max-height: 74%; object-fit: contain; }
+  .preview.doc { background: var(--bg-elev-2); }
+  .preview iframe { position: absolute; top: 0; left: 0; width: 400%; height: 400%; border: 0; transform: scale(.25); transform-origin: 0 0; pointer-events: none; background: #fff; }
+  .filetile { display: grid; place-items: center; width: 64px; height: 80px; border-radius: 8px; background: var(--bg-elev); border: 1px solid var(--border); color: var(--muted); font-weight: 700; font-size: .8rem; letter-spacing: .04em; position: relative; }
+  .filetile::before { content: ""; position: absolute; top: -1px; right: -1px; width: 18px; height: 18px; background: linear-gradient(225deg, var(--bg-elev-2) 50%, var(--border) 50%); border-bottom-left-radius: 4px; }
+  .body { padding: .85rem .95rem .95rem; display: flex; flex-direction: column; gap: .55rem; flex: 1; }
+  .name { margin: 0; font-size: .95rem; font-weight: 650; word-break: break-word; }
+  .meta { display: flex; flex-wrap: wrap; gap: .35rem; align-items: center; color: var(--muted); font-size: .8rem; }
+  .tag { display: inline-block; font-weight: 700; font-size: .7rem; letter-spacing: .05em; text-transform: uppercase; padding: .15rem .45rem; border-radius: 6px; background: color-mix(in srgb, var(--accent) 18%, transparent); color: var(--accent-strong); }
+  .path { color: var(--muted); font-size: .75rem; word-break: break-all; margin: 0; }
+  .actions { display: flex; gap: .4rem; margin-top: auto; }
+  .actions .btn { flex: 1 1 auto; min-width: 0; font-size: .8rem; min-height: 36px; padding: .45rem .55rem; white-space: nowrap; }
+  .actions .btn.icon { flex: 0 0 auto; }
+
+  .empty, .status { text-align: center; color: var(--muted); padding: 3rem 1rem; border: 1px dashed var(--border); border-radius: var(--radius); margin-top: 2rem; }
+  footer { border-top: 1px solid var(--border); color: var(--muted); font-size: .85rem; padding: 1.5rem 0 2.5rem; }
+  footer .wrap { display: flex; gap: 1rem; flex-wrap: wrap; justify-content: space-between; }
+
+  .toast { position: fixed; left: 50%; bottom: 1.25rem; transform: translateX(-50%) translateY(150%); background: var(--text); color: var(--bg); padding: .6rem 1rem; border-radius: 10px; font-size: .875rem; font-weight: 600; box-shadow: var(--shadow); transition: transform .2s, opacity .2s, visibility .2s; z-index: 20; max-width: calc(100% - 2rem); opacity: 0; visibility: hidden; }
+  .toast.show { transform: translateX(-50%) translateY(0); opacity: 1; visibility: visible; }
+
+  @media (max-width: 560px) {
+    .bar h1 { display: none; }
+    .bar { gap: .5rem; padding: .75rem 0; }
+    .bar .btn span { display: none; }
+    .bar .btn { min-width: 40px; min-height: 40px; }
+    .path { display: none; }
+    .plate img { height: 24px; }
+    .grid { grid-template-columns: 1fr 1fr; gap: .7rem; }
+    .body { padding: .7rem; }
+    .actions .btn .lbl { display: none; }
+    .actions .btn { flex: 1 1 0; }
+    .toolbar .wrap { gap: .5rem; }
+    .search { flex-basis: 100%; }
+  }
+  @media (max-width: 360px) { .grid { grid-template-columns: 1fr; } }
+  @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+</head>
+<body>
+<a class="skip" href="#assets">Skip to assets</a>
+
+<header class="site">
+  <div class="wrap bar">
+    <a class="plate" href="./" aria-label="ThoughtPivot Assets home">
+      <img src="https://thoughtpivot.github.io/assets/email/tp-logo.png" alt="ThoughtPivot" width="420" height="68">
+    </a>
+    <h1><strong>Assets</strong> &middot; brand files &amp; templates</h1>
+    <span class="spacer"></span>
+    <button class="btn" id="previewToggle" type="button" aria-pressed="false" aria-label="Dark thumbnail backgrounds" title="Switch thumbnail background">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 12h18M12 3v18"/></svg>
+      <span>Dark previews</span>
+    </button>
+    <button class="btn" id="themeToggle" type="button" aria-label="Toggle color theme">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+      <span id="themeLabel">Theme</span>
+    </button>
+  </div>
+</header>
+
+<div class="wrap">
+  <section class="hero" aria-labelledby="hero-title">
+    <h2 id="hero-title">Every ThoughtPivot asset, <span>one click away.</span></h2>
+    <p>Logos, icons and email templates hosted on GitHub Pages. Download a file or copy its permanent <code>https://thoughtpivot.github.io/assets/&hellip;</code> URL to use in emails, docs and sites.</p>
+  </section>
+
+  <section aria-labelledby="brands-title">
+    <h2 id="brands-title" class="sr-only">Brands</h2>
+    <div class="brands">
+      <article class="brand" id="brand-thoughtpivot">
+        <span class="plate"><img src="https://thoughtpivot.github.io/assets/email/tp-logo.png" alt="ThoughtPivot logo" width="420" height="68"></span>
+        <div>
+          <h3>ThoughtPivot</h3>
+          <p>Primary wordmark. Use the PNG in email, the SVG everywhere else.</p>
+        </div>
+        <div class="chips" data-brand="ThoughtPivot"></div>
+      </article>
+      <article class="brand" id="brand-bytewells">
+        <span class="plate"><img src="https://thoughtpivot.github.io/assets/email/bytewells-logo.png" alt="Bytewells logo" width="634" height="120"></span>
+        <div>
+          <h3>Bytewells <span style="color:var(--muted);font-weight:500">by ThoughtPivot</span></h3>
+          <p>Bytewells logo and branded email templates.</p>
+        </div>
+        <div class="chips" data-brand="Bytewells"></div>
+      </article>
+    </div>
+  </section>
+</div>
+
+<div class="toolbar" role="search">
+  <div class="wrap">
+    <div class="search">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      <label for="q" class="sr-only">Search assets</label>
+      <input id="q" type="search" placeholder="Search by name, folder, type or brand…  (press /)" autocomplete="off" spellcheck="false">
+    </div>
+    <div class="seg" role="group" aria-label="Filter by kind">
+      <button type="button" data-filter="all" aria-pressed="true">All</button>
+      <button type="button" data-filter="image" aria-pressed="false">Images</button>
+      <button type="button" data-filter="document" aria-pressed="false">Docs</button>
+    </div>
+    <span class="count" id="count" aria-live="polite"></span>
+  </div>
+</div>
+
+<main id="assets" class="wrap" tabindex="-1">
+  <p class="status" id="status">Loading assets&hellip;</p>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>&copy; <span id="year"></span> ThoughtPivot &middot; Detroit, MI</span>
+    <span>Source: <a href="https://github.com/thoughtpivot/assets">github.com/thoughtpivot/assets</a> &middot; <a href="assets.json">assets.json</a></span>
+  </div>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+(function () {
+  "use strict";
+  var $ = function (s, r) { return (r || document).querySelector(s); };
+  var main = $("#assets"), countEl = $("#count"), q = $("#q"), toast = $("#toast");
+  var DATA = null, filter = "all";
+  $("#year").textContent = new Date().getFullYear();
+
+  var ICON = {
+    download: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3v12m0 0-5-5m5 5 5-5M4 21h16"/></svg>',
+    copy: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>',
+    open: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M14 3h7v7M21 3l-9 9M19 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h5"/></svg>'
+  };
+
+  /* Theme */
+  var root = document.documentElement;
+  function currentTheme() {
+    return root.dataset.theme === "light" ? "light" : "dark";
+  }
+  function syncThemeLabel() {
+    var t = currentTheme();
+    $("#themeLabel").textContent = t === "dark" ? "Light mode" : "Dark mode";
+    $("#themeToggle").setAttribute("aria-label", "Switch to " + (t === "dark" ? "light" : "dark") + " theme");
+  }
+  $("#themeToggle").addEventListener("click", function () {
+    var next = currentTheme() === "dark" ? "light" : "dark";
+    root.dataset.theme = next;
+    try { localStorage.setItem("tp-theme", next); } catch (e) {}
+    syncThemeLabel();
+  });
+  syncThemeLabel();
+
+  /* Preview background */
+  var pt = $("#previewToggle");
+  function setPreview(dark) {
+    document.body.dataset.preview = dark ? "dark" : "light";
+    pt.setAttribute("aria-pressed", String(dark));
+    pt.querySelector("span").textContent = dark ? "Light previews" : "Dark previews";
+    try { localStorage.setItem("tp-preview", dark ? "dark" : "light"); } catch (e) {}
+  }
+  pt.addEventListener("click", function () { setPreview(document.body.dataset.preview !== "dark"); });
+  try { setPreview(localStorage.getItem("tp-preview") === "dark"); } catch (e) { setPreview(false); }
+
+  /* Helpers */
+  function el(tag, attrs, html) {
+    var n = document.createElement(tag);
+    for (var k in attrs || {}) {
+      if (k === "text") n.textContent = attrs[k];
+      else if (attrs[k] !== null && attrs[k] !== undefined) n.setAttribute(k, attrs[k]);
+    }
+    if (html) n.innerHTML = html;
+    return n;
+  }
+  function fmtBytes(b) {
+    if (b < 1024) return b + " B";
+    if (b < 1048576) return (b / 1024).toFixed(b < 10240 ? 1 : 0) + " KB";
+    return (b / 1048576).toFixed(1) + " MB";
+  }
+  function slug(s) { return "g-" + (s || "root").replace(/[^a-z0-9]+/gi, "-").toLowerCase(); }
+  function showToast(msg) {
+    toast.textContent = msg; toast.classList.add("show");
+    clearTimeout(showToast.t); showToast.t = setTimeout(function () { toast.classList.remove("show"); }, 1800);
+  }
+  function copyText(text) {
+    if (navigator.clipboard && window.isSecureContext) return navigator.clipboard.writeText(text);
+    return new Promise(function (res, rej) {
+      var ta = el("textarea", { readonly: "", style: "position:fixed;top:-1000px;opacity:0" });
+      ta.value = text; document.body.appendChild(ta); ta.select();
+      try { document.execCommand("copy") ? res() : rej(); } catch (e) { rej(e); }
+      ta.remove();
+    });
+  }
+  function copyButton(a, cls, label) {
+    var b = el("button", { type: "button", "class": "btn " + (cls || ""), "data-url": a.url, "aria-label": "Copy URL for " + a.path },
+      ICON.copy + '<span class="lbl">' + (label || "Copy URL") + "</span>");
+    return b;
+  }
+  document.addEventListener("click", function (e) {
+    var b = e.target.closest("button[data-url]");
+    if (!b) return;
+    var lbl = b.querySelector(".lbl"), orig = lbl ? lbl.textContent : "";
+    copyText(b.dataset.url).then(function () {
+      b.classList.add("copied"); if (lbl) lbl.textContent = "Copied!";
+      showToast("Copied " + b.dataset.url);
+      setTimeout(function () { b.classList.remove("copied"); if (lbl) lbl.textContent = orig; }, 1500);
+    }, function () { showToast("Copy failed. URL: " + b.dataset.url); });
+  });
+
+  /* Rendering */
+  function preview(a) {
+    var box = el("div", { "class": "preview" });
+    if (a.category === "image") {
+      box.appendChild(el("img", { src: a.path, alt: "Preview of " + a.name, loading: "lazy", decoding: "async",
+        width: a.width || null, height: a.height || null }));
+    } else if (a.ext === "html" || a.ext === "htm") {
+      // Sandboxed (no scripts), non-interactive scaled thumbnail of the email template.
+      box.appendChild(el("iframe", { src: a.path, title: "Preview of " + a.name, loading: "lazy", sandbox: "", tabindex: "-1", "aria-hidden": "true" }));
+    } else {
+      box.classList.add("doc");
+      box.appendChild(el("span", { "class": "filetile", "aria-hidden": "true", text: a.ext.toUpperCase() }));
+    }
+    return box;
+  }
+
+  function card(a) {
+    var li = el("li", { "class": "card" });
+    li.dataset.search = [a.path, a.type, a.category, a.brand || ""].join(" ").toLowerCase();
+    li.dataset.category = a.category;
+    li.appendChild(preview(a));
+    var body = el("div", { "class": "body" });
+    body.appendChild(el("h3", { "class": "name", text: a.name }));
+    var meta = el("div", { "class": "meta" });
+    meta.appendChild(el("span", { "class": "tag", text: a.type }));
+    meta.appendChild(el("span", { text: fmtBytes(a.bytes) }));
+    if (a.width && a.height) meta.appendChild(el("span", { text: "· " + a.width + "×" + a.height }));
+    if (a.brand) meta.appendChild(el("span", { text: "· " + a.brand }));
+    body.appendChild(meta);
+    body.appendChild(el("p", { "class": "path mono", text: a.path }));
+    var actions = el("div", { "class": "actions" });
+    actions.appendChild(el("a", { "class": "btn primary", href: a.path, download: a.name, "aria-label": "Download " + a.path },
+      ICON.download + '<span class="lbl">Download</span>'));
+    actions.appendChild(copyButton(a));
+    actions.appendChild(el("a", { "class": "btn icon", href: a.path, target: "_blank", rel: "noopener", "aria-label": "Open " + a.path + " in a new tab", title: "Open" }, ICON.open));
+    body.appendChild(actions);
+    li.appendChild(body);
+    return li;
+  }
+
+  function render(data) {
+    main.innerHTML = "";
+    data.groups.forEach(function (g) {
+      var id = slug(g.dir);
+      var sec = el("section", { "class": "group", id: id, "aria-labelledby": id + "-h" });
+      var head = el("div", { "class": "group-head" });
+      head.appendChild(el("h2", { id: id + "-h", text: g.title }));
+      head.appendChild(el("code", { text: (g.dir || ".") + "/" }));
+      head.appendChild(el("span", { "class": "n", "data-n": "" }));
+      sec.appendChild(head);
+      var ul = el("ul", { "class": "grid", role: "list" });
+      data.assets.filter(function (a) { return a.dir === g.dir; }).forEach(function (a) { ul.appendChild(card(a)); });
+      sec.appendChild(ul);
+      main.appendChild(sec);
+    });
+    main.appendChild(el("p", { "class": "empty", id: "empty", hidden: "", text: "No assets match your search." }));
+
+    // Brand quick-copy chips: image files for each brand.
+    document.querySelectorAll(".chips[data-brand]").forEach(function (box) {
+      data.assets.filter(function (a) { return a.brand === box.dataset.brand && a.category === "image" && a.dir === "email"; })
+        .forEach(function (a) { box.appendChild(copyButton(a, "", "Copy " + a.ext.toUpperCase() + " URL")); });
+      var more = el("a", { "class": "btn", href: "#", text: "View all" });
+      more.addEventListener("click", function (e) {
+        e.preventDefault(); q.value = box.dataset.brand; apply(); main.scrollIntoView({ behavior: "smooth" }); q.focus();
+      });
+      box.appendChild(more);
+    });
+    apply();
+  }
+
+  function apply() {
+    var terms = q.value.trim().toLowerCase().split(/\s+/).filter(Boolean);
+    var shown = 0;
+    main.querySelectorAll("section.group").forEach(function (sec) {
+      var n = 0;
+      sec.querySelectorAll(".card").forEach(function (c) {
+        var ok = (filter === "all" || c.dataset.category === filter) &&
+          terms.every(function (t) { return c.dataset.search.indexOf(t) !== -1; });
+        c.hidden = !ok; if (ok) n++;
+      });
+      sec.hidden = n === 0;
+      sec.querySelector("[data-n]").textContent = n + (n === 1 ? " file" : " files");
+      shown += n;
+    });
+    var total = DATA ? DATA.assets.length : 0;
+    countEl.textContent = shown === total ? total + " assets" : shown + " of " + total + " assets";
+    var empty = $("#empty"); if (empty) empty.hidden = shown !== 0;
+    var url = new URL(location.href);
+    if (q.value.trim()) url.searchParams.set("q", q.value.trim()); else url.searchParams.delete("q");
+    history.replaceState(null, "", url);
+  }
+
+  q.addEventListener("input", apply);
+  document.querySelectorAll(".seg button").forEach(function (b) {
+    b.addEventListener("click", function () {
+      filter = b.dataset.filter;
+      document.querySelectorAll(".seg button").forEach(function (x) { x.setAttribute("aria-pressed", String(x === b)); });
+      apply();
+    });
+  });
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "/" && document.activeElement !== q && !/input|textarea/i.test((document.activeElement || {}).tagName)) { e.preventDefault(); q.focus(); }
+    if (e.key === "Escape" && document.activeElement === q && q.value) { q.value = ""; apply(); }
+  });
+  var initial = new URLSearchParams(location.search).get("q");
+  if (initial) q.value = initial;
+
+  fetch("assets.json", { cache: "no-cache" })
+    .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+    .then(function (data) { DATA = data; render(data); })
+    .catch(function () {
+      $("#status").textContent = "Could not load assets.json. Browse the files on GitHub instead: github.com/thoughtpivot/assets";
+    });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+name: assets.json up to date
+
+# Fails if assets.json does not match the files in the repo.
+# It never commits; regenerate locally with `node scripts/build-index.mjs`.
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: node scripts/build-index.mjs --check
