@@ -1,18 +1,14 @@
-Subject: Monthly rentals for your {{store_actor_count}} Apify Actors
-
 Hi {{first_name}},
 
 Apify retired rental pricing on Oct 1. We're launching Bytewells by ThoughtPivot on Nov 2: a second storefront for Apify Actors. Your Apify listing stays live.
 
 Renters pay monthly or buy 1-hour, 24-hour or 7-day passes. 10% commission, 0% on renters you bring.
 
-You have {{store_actor_count}} Actors on Apify (e.g. {{sample_actor_url}}).
+You have {{store_actor_count}} Actors on Apify (e.g. {{sample_actor_url}}).{{#had_rentals}}
 
-{{#had_rentals}}You had rental Actors before Oct 1. This brings that model back.{{/had_rentals}}
+You had rental Actors before Oct 1. This brings that model back.{{/had_rentals}}
 
 Join the developer waitlist: https://bytewells.com/developer-waitlist
-
-_dan
 
 --
 Bytewells by ThoughtPivot
