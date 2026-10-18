@@ -1,0 +1,231 @@
+{
+  "baseUrl": "https://thoughtpivot.github.io/assets/",
+  "count": 17,
+  "groups": [
+    {
+      "dir": "email",
+      "title": "Email brand logos",
+      "count": 4
+    },
+    {
+      "dir": "email/bytewells",
+      "title": "Bytewells email templates",
+      "count": 9
+    },
+    {
+      "dir": "email/bytewells/assets",
+      "title": "Bytewells email source logos",
+      "count": 2
+    },
+    {
+      "dir": "vran",
+      "title": "Vran",
+      "count": 2
+    }
+  ],
+  "assets": [
+    {
+      "path": "email/bytewells-logo.png",
+      "name": "bytewells-logo.png",
+      "dir": "email",
+      "ext": "png",
+      "type": "PNG",
+      "category": "image",
+      "bytes": 14553,
+      "width": 634,
+      "height": 120,
+      "brand": "Bytewells",
+      "url": "https://thoughtpivot.github.io/assets/email/bytewells-logo.png"
+    },
+    {
+      "path": "email/bytewells-logo.svg",
+      "name": "bytewells-logo.svg",
+      "dir": "email",
+      "ext": "svg",
+      "type": "SVG",
+      "category": "image",
+      "bytes": 6751,
+      "width": 813,
+      "height": 154,
+      "brand": "Bytewells",
+      "url": "https://thoughtpivot.github.io/assets/email/bytewells-logo.svg"
+    },
+    {
+      "path": "email/bytewells/assets/bytewells-logo.svg",
+      "name": "bytewells-logo.svg",
+      "dir": "email/bytewells/assets",
+      "ext": "svg",
+      "type": "SVG",
+      "category": "image",
+      "bytes": 6751,
+      "width": 813,
+      "height": 154,
+      "brand": "Bytewells",
+      "url": "https://thoughtpivot.github.io/assets/email/bytewells/assets/bytewells-logo.svg"
+    },
+    {
+      "path": "email/bytewells/assets/tp-logo.svg",
+      "name": "tp-logo.svg",
+      "dir": "email/bytewells/assets",
+      "ext": "svg",
+      "type": "SVG",
+      "category": "image",
+      "bytes": 11613,
+      "width": 5343,
+      "height": 865,
+      "brand": "ThoughtPivot",
+      "url": "https://thoughtpivot.github.io/assets/email/bytewells/assets/tp-logo.svg"
+    },
+    {
+      "path": "email/bytewells/email1.html",
+      "name": "email1.html",
+      "dir": "email/bytewells",
+      "ext": "html",
+      "type": "HTML",
+      "category": "document",
+      "bytes": 5021,
+      "brand": "Bytewells",
+      "url": "https://thoughtpivot.github.io/assets/email/bytewells/email1.html"
+    },
+    {
+      "path": "email/bytewells/email1.txt",
+      "name": "email1.txt",
+      "dir": "email/bytewells",
+      "ext": "txt",
+      "type": "Text",
+      "category": "document",
+      "bytes": 1009,
+      "brand": "Bytewells",
+      "url": "https://thoughtpivot.github.io/assets/email/bytewells/email1.txt"
+    },
+    {
+      "path": "email/bytewells/email2.html",
+      "name": "email2.html",
+      "dir": "email/bytewells",
+      "ext": "html",
+      "type": "HTML",
+      "category": "document",
+      "bytes": 4228,
+      "brand": "Bytewells",
+      "url": "https://thoughtpivot.github.io/assets/email/bytewells/email2.html"
+    },
+    {
+      "path": "email/bytewells/email2.txt",
+      "name": "email2.txt",
+      "dir": "email/bytewells",
+      "ext": "txt",
+      "type": "Text",
+      "category": "document",
+      "bytes": 737,
+      "brand": "Bytewells",
+      "url": "https://thoughtpivot.github.io/assets/email/bytewells/email2.txt"
+    },
+    {
+      "path": "email/bytewells/email3.html",
+      "name": "email3.html",
+      "dir": "email/bytewells",
+      "ext": "html",
+      "type": "HTML",
+      "category": "document",
+      "bytes": 4298,
+      "brand": "Bytewells",
+      "url": "https://thoughtpivot.github.io/assets/email/bytewells/email3.html"
+    },
+    {
+      "path": "email/bytewells/email3.txt",
+      "name": "email3.txt",
+      "dir": "email/bytewells",
+      "ext": "txt",
+      "type": "Text",
+      "category": "document",
+      "bytes": 681,
+      "brand": "Bytewells",
+      "url": "https://thoughtpivot.github.io/assets/email/bytewells/email3.txt"
+    },
+    {
+      "path": "email/bytewells/README.md",
+      "name": "README.md",
+      "dir": "email/bytewells",
+      "ext": "md",
+      "type": "Markdown",
+      "category": "document",
+      "bytes": 2586,
+      "brand": "Bytewells",
+      "url": "https://thoughtpivot.github.io/assets/email/bytewells/README.md"
+    },
+    {
+      "path": "email/bytewells/reply_waitlist.html",
+      "name": "reply_waitlist.html",
+      "dir": "email/bytewells",
+      "ext": "html",
+      "type": "HTML",
+      "category": "document",
+      "bytes": 3940,
+      "brand": "Bytewells",
+      "url": "https://thoughtpivot.github.io/assets/email/bytewells/reply_waitlist.html"
+    },
+    {
+      "path": "email/bytewells/reply_waitlist.txt",
+      "name": "reply_waitlist.txt",
+      "dir": "email/bytewells",
+      "ext": "txt",
+      "type": "Text",
+      "category": "document",
+      "bytes": 584,
+      "brand": "Bytewells",
+      "url": "https://thoughtpivot.github.io/assets/email/bytewells/reply_waitlist.txt"
+    },
+    {
+      "path": "email/tp-logo.png",
+      "name": "tp-logo.png",
+      "dir": "email",
+      "ext": "png",
+      "type": "PNG",
+      "category": "image",
+      "bytes": 5248,
+      "width": 420,
+      "height": 68,
+      "brand": "ThoughtPivot",
+      "url": "https://thoughtpivot.github.io/assets/email/tp-logo.png"
+    },
+    {
+      "path": "email/tp-logo.svg",
+      "name": "tp-logo.svg",
+      "dir": "email",
+      "ext": "svg",
+      "type": "SVG",
+      "category": "image",
+      "bytes": 11613,
+      "width": 5343,
+      "height": 865,
+      "brand": "ThoughtPivot",
+      "url": "https://thoughtpivot.github.io/assets/email/tp-logo.svg"
+    },
+    {
+      "path": "vran/vran-icon-1024.png",
+      "name": "vran-icon-1024.png",
+      "dir": "vran",
+      "ext": "png",
+      "type": "PNG",
+      "category": "image",
+      "bytes": 59855,
+      "width": 1024,
+      "height": 1024,
+      "brand": "Vran",
+      "url": "https://thoughtpivot.github.io/assets/vran/vran-icon-1024.png"
+    },
+    {
+      "path": "vran/vran-icon.svg",
+      "name": "vran-icon.svg",
+      "dir": "vran",
+      "ext": "svg",
+      "type": "SVG",
+      "category": "image",
+      "bytes": 11562,
+      "width": 64,
+      "height": 64,
+      "brand": "Vran",
+      "url": "https://thoughtpivot.github.io/assets/vran/vran-icon.svg"
+    }
+  ]
+}
